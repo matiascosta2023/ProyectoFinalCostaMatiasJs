@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> 
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
+</head>
+<body>
+    
+    <!-- MODAL PARA USUARIO NUEVO -->
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary botones" data-bs-toggle="modal" data-bs-target="#exampleModal">CREAR NUEVO SOCIO</button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">REGISTRESE</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- ACA SE COLOCA EL FORM -->
+              <form action="" id="formulario">
+                <div class="linea-formulario">
+                    <label for="tipoSocio"> Tipo de Socio</label>
+                    <select name="Categoria Socio" id="tipoSocio" class="bordes">
+                        <option value="1">Socio Básico ($500)</option>
+                        <option value="2">Socio Extra ($800)</option>
+                        <option value="3">Socio Premium ($1000)</option>
+                    </select>
+                </div>
+                <div class="linea-formulario">
+                    <label for="tipoDocumento"> Tipo de Documento</label>
+                    <select name="Tipo de documento" id="tipoDocumento" class="bordes">
+                        <option value="1">DNI</option>
+                        <option value="2">Pasaporte</option>
+                    </select>
+                </div>
+                <div class="linea-formulario">
+                    <label for="documento">Documento</label>
+                    <input type="text" name="Documento" id="documento" class="bordes">
+                </div>
+                <div class="linea-formulario">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" name="Nombre Completo" id="nombre" class="bordes">
+                </div>
+                <div class="linea-formulario">
+                    <label for="cantCuotas">Cantidad de Cuotas</label>
+                    <!-- <input type="text" name="Cantidad de Cuotas" id="cantCuotas"> -->
+                    <select name="Cantidad de Cuotas" id="cantCuotas" class="bordes">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+              </form>
+            <div class="warnings">
+                <span class="alertaDocumento" id="alertaDocumento">Documento inválido, largo mínimo de 4 caracteres.</span>
+                <span class="alertaNombre" id="alertaNombre">Nombre inválido, largo mínimo de 4 caracteres.</span>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <div>
+                    <span class="creacionNoOK" id="creacionSocio">SOCIO CREADO!</span>
+                </div>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" id="btnSubmit">Crear Socio</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOGIN USUARIO ADMINISTRADOR -->
+      <button class="btn btn-danger botones" id="btnAdmin">VACIAR SOCIOS</button>
+      
+
+
+    <!-- ACORDION PARA USUARIO YA EXISTENTE -->
+
+    <div class="accordion accordion-flush acordeon" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed acordeonC" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              BUSCAR SOCIO
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse acordeonXL" data-bs-parent="#accordionFlushExample">
+            <form action="">
+                <div class="accordion-body">
+                    <label for="documento" >Ingrese su documento</label>
+                    <input type="text" name="documento" id="claveDocumento">
+                    <input type="submit" name="documento" id="btnBuscarUsuario">
+                </div>
+            </form>
+            <div class="cuotasListadoNo" id="cuotasListado">
+                <h2>Listado de cuotas</h2>
+                <!-- TABLA CON CUOTAS A PAGAR EN CASO DE HABERLAS -->
+                <div id="cuotasListadoId">                  
+                  <table class="table cuotasId tablaAcordeon">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nro. de Cuota</th>
+                        <th scope="col">Documento</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Socio</th>
+                        <th scope="col">Importe</th>
+                        <th scope="col">Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody id="cuotasID">
+                    </tbody>
+                  </table>
+                  <!-- <div>
+                    <button type="button" class="btn btn-primary" id="btnPagar">PAGAR</button>
+                  </div> -->
+                </div>
+            </div>
+            <!-- TEXTO INDICANDO QUE NO SE ENCONTRARON CUOTAS A PAGAR -->
+            <div class="sinCuotasNo" id="sinCuotas">
+              <h3>NO SE ENCONTRARON CUOTAS A PAGAR</h3>
+            </div>
+          </div>
+        </div>        
+      </div>
+      
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.js" integrity="sha512-ZHzbWDQKpcZxIT9l5KhcnwQTidZFzwK/c7gpUUsFvGjEsxPusdUCyFxjjpc7e/Wj7vLhfMujNx7COwOmzbn+2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src = "js/socio.js"></script>
+    <script src = "js/Preentrega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+</html>

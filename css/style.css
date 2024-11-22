@@ -1,0 +1,221 @@
+body {
+    background: linear-gradient(270deg, rgb(22, 26, 63) 0%, rgb(96, 98, 207) 41%, rgb(22, 26, 63) 100%);
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 100px 1fr;
+}
+
+.botones{
+    width: 300px;
+    justify-self: center;
+    align-self: center;
+}
+
+.warnings{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: center; */    
+}
+.alertaNombre{
+    color: red;
+    font-weight: bold;
+    visibility: hidden;    
+}
+.alertaDocumento{
+    color: red;
+    font-weight: bold;
+    visibility: hidden;    
+}
+
+.warnings-nombre{
+    color: darkred;
+    font-weight: bold;   
+}
+.warnings-documento{
+    color: darkred;
+    font-weight: bold;  
+}
+
+.bordeNombre{
+    border-color: red;
+    border-width: 2px;
+}
+
+.bordeDocumento{
+    border-color: red;
+    border-width: 2px;
+}
+
+.creacionOK{
+    position: relative;
+    right: 50%;
+    color: green;
+    font-weight: bold;    
+}
+
+.creacionNoOK{
+    visibility: hidden;
+}
+
+.cuotasListadoNo{
+    display: none;
+}
+
+.cuotasListado{
+    width: 90%;
+    background-color: rgb(9, 160, 72); 
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.cuotasListado h2{
+    color: rgb(0, 0, 0);
+    justify-self: center;
+    text-shadow: 10px black;
+}
+
+.sinCuotasNo {
+    display: none;
+}
+
+.sinCuotas h3 {
+    color: darkred;
+    size: 1.5 rem;
+}
+
+.btn-outline-danger{
+    font-weight: bolder;
+    border-width: 2px;
+    background-color: rgb(35, 179, 71);
+    color: darkred;
+    border-color: darkred;
+}
+
+.acordeon {
+    width: 67vw;
+    grid-column: 1/3 ;
+    justify-self: center;
+    align-self: center;
+    border-radius: 5px;
+}
+
+.acordeonC {    
+    background-color: rgb(9, 160, 72);
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.acordeonC:not(.collapsed) {
+    background-color: rgb(9, 160, 72);
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.acordeonXL{
+    background-color: rgb(9, 160, 72);
+}
+
+.acordeonXL label{
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 10px;
+}
+
+.acordeonXl{
+    background-color: bisque;
+}
+
+.cuotasListado div{
+    width: 90%;
+}
+
+.cuota-paga{
+    color: darkred;
+    font-weight: bold;
+}
+
+.acordeonXL {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px 50px 0px;
+}
+
+
+.modal-content{
+    background-color: rgb(182, 153, 117);
+}
+#formulario {
+    display: grid;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* Estilos para los elementos del formulario */
+  .form-group {
+    display: grid;
+    gap: 5px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .form-group select,
+  .form-group input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .form-group select {
+    height: 35px; /* Ajustar la altura de los select para que coincida con los input */
+  }
+  
+  .form-group input[type="text"] {
+    height: 35px;
+  }
+  
+  .form-group input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .form-group input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+  .linea-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bordes {
+    background-color: bisque;
+  }
+
+  .swal2-input::placeholder {
+    /* Estilos que deseas aplicar */
+    color: black; /* Color del texto del placeholder */
+    
+    font-style: italic; /* Estilo de fuente del placeholder (por ejemplo, en cursiva) */
+  }
+
+  .swal2-input {
+    background-color: bisque;
+  }
